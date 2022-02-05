@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+INTERNAL_APPS = ["products","authservice"]  # APPs for CycleWala
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,8 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+] + INTERNAL_APPS
 
+
+# Extra Settings here....
+AUTH_USER_MODEL = 'authservice.User'
+
+# End of Extra Settings here....
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
